@@ -1,6 +1,17 @@
 # Student-Startup Matching Algorithm
-First students and startups fill out the Qualtrics and Google forms, then we will extract data from the forms and convert into structured data. With the structured data, then we will do similarity calculation and one-on-one matching. So the input of the program will be 
 
+First students and startups fill out the Qualtrics and Google forms, then we will extract data from the forms and convert into structured data. With the structured data, then we will do similarity calculation and one-on-one matching. So the input of the program will be the form data, the output will be one on one pairs.
+
+Potentially we will have around 100 startups and 100 MBA students, we will try to matching them evenly.
+
+## Form Design 
+Startups will give weights to each feature they want, for example:
+- Feature list: []
+- Feature weights: []
+  
+Students also give weights on each feature of their expertise in those field.
+- Skill list: []
+- Skill level: []
 
 ## Cosine similarity calculation
 For each company, we calculate the top 10 students based on their cosine similarities. For example:
