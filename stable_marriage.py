@@ -38,6 +38,7 @@ for i in range(len(student_names)):
 skills = ['Python', 'Marketing', 'Product Management']
 skill_scale = range(0, 8)  # 0-7
 
+# Todo: Modify it to suit our model and data
 # Generate companies with preferred skills
 companies = {}
 for i in range(150):
