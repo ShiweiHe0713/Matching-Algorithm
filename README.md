@@ -21,3 +21,12 @@ Beta Tech,Isaac Rivera,0.9606671410703103,Liam Turner,0.9075950713612995,Oscar G
 
 ## One-to-One Matching Algorithm
 Hugarian algorithm is used in summer 2022, and the Stable Marriage algorithm is going to be used in summer 2024.
+
+## Now
+We have 100-ish companies, 100-ish students, each company have 3 preferred skills  from the scale 0-7 (python, marketing, product management), and each students have different level of skill from 0-7(python, marketing, product management). Now I need to use stable marriage algorithm to pair students and companies, every student is guaranteed a company, but company is not guaranteed to have a student. 
+
+[GPT Conversation](https://chatgpt.com/share/6651da2b-bb0a-40ca-8721-42bfe76579e5)
+
+## Stable Marriage Algortihm Explained
+The Stable Marriage Problem (SMP) is a classic algorithmic problem that seeks to find a stable matching between two equally sized sets of elements given an ordering of preferences for each element. A matching is considered stable if there are **no two elements** from opposite sets that would both prefer each other over their current partners.
+
