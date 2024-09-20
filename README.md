@@ -30,3 +30,5 @@ We have 100-ish companies, 100-ish students, each company have 3 preferred skill
 ## Stable Marriage Algortihm Explained
 The Stable Marriage Problem (SMP) is a classic algorithmic problem that seeks to find a stable matching between two equally sized sets of elements given an ordering of preferences for each element. A matching is considered stable if there are **no two elements** from opposite sets that would both prefer each other over their current partners.
 
+Student's preference list: A, B, C
+student will 
