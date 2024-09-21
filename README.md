@@ -32,3 +32,5 @@ The Stable Marriage Problem (SMP) is a classic algorithmic problem that seeks to
 
 Student's preference list: A, B, C
 student will 
+
+**Dot product's columns order between students and companies have to be the same.**
