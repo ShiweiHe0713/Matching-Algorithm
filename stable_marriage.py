@@ -6,7 +6,7 @@ import numpy as np
 from numpy.linalg import norm
 
 # read startup data into array or np array
-with open('data/startup_data.csv','r', encoding='utf-8') as f:
+with open('data/processed_startup_data.csv','r', encoding='utf-8') as f:
     reader = csv.reader(f)
     startup_data = [row for row in reader][1:]
 
@@ -17,9 +17,15 @@ startup_profiles = np.array([row[1:] for row in startup_data], dtype=float)
 # startup_profiles[:, 0:8] = startup_profiles[:, 0:8] / 7
 
 # Read student data from CSV
-with open('data/student_data.csv', 'r', encoding='utf-8') as f:
+with open('data/processed_student_data.csv', 'r', encoding='utf-8') as f:
     reader = csv.reader(f)
     student_data = [row for row in reader][1:]
+
+# Assign a 0 to empty values
+for row in student_data:
+    for i in range(len(row)):
+        if row[i] == '':
+            row[i] = '0'  # Assign '0' as a string to avoid issues during conversion
 
 student_names = [row[0] for row in student_data]
 student_profiles = np.array([row[1:] for row in student_data], dtype=float)
@@ -33,6 +39,7 @@ for i, startup in enumerate(startup_profiles):
     cos_sim_ranking = np.argsort(cos_sim)[::-1]
     startup_ranking = [(student_names[j]) for j in cos_sim_ranking]
     startup_preferences[startup_names[i]] = startup_ranking
+
 
 # Preference list for student_preferences
 for i, student in enumerate(student_profiles):
@@ -86,4 +93,10 @@ def stable_marriage(student_prefs, company_prefs):
     return matches
 
 matches = stable_marriage(student_preferences, startup_preferences)
-print(matches)
+
+# Convert the matching results to a DataFrame
+matching_df = pd.DataFrame(list(matches.items()), columns=['Student Name', 'Company'])
+
+# Save the DataFrame to a CSV file
+output_file = 'data/student_company_matching.csv'
+matching_df.to_csv(output_file, index=False)
