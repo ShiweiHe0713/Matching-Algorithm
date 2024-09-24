@@ -20,7 +20,7 @@ startup_profiles = np.array([row[1:] for row in startup_data], dtype=float)
 with open('data/student_data.csv', 'r', encoding='utf-8') as f:
     reader = csv.reader(f)
     student_data = [row for row in reader][1:]
-    
+
 student_names = [row[0] for row in student_data]
 student_profiles = np.array([row[1:] for row in student_data], dtype=float)
 
